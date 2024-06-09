@@ -35,6 +35,37 @@ class Rooms extends StatelessWidget {
                   'Rooms',
                   style: TextStyle(color: Colors.white),
                 ),
+                actions: [
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          shape: const StadiumBorder(),
+                          // backgroundColor: Color(0xff3D85C6),
+                          backgroundColor: Colors.white),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Rooms(
+                                  patient: patient,
+                                )));
+                        CubitDoctorHosptial.get(context)
+                            .removeFirstPatient();
+                        CubitDoctorHosptial.get(context).showFinishRequestSentDialo(context);
+                      },
+                      child: const Text(
+                        "Finish",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          color: Colors.blue,
+                          fontFamily: 'Readex Pro',
+                          fontSize: 15.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               body: Padding(
                 padding: const EdgeInsets.all(8.0),

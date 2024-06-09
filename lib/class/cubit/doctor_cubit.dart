@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../modules/doctor_ui/home/home_doctor.dart';
-import '../../modules/doctor_ui/home/main_doctor_home.dart';
 
-import '../../modules/doctor_ui/profile_of_doctor.dart';
+import '../../modules/doctor_ui_new/home/home_doctor.dart';
+import '../../modules/doctor_ui_new/home/main_doctor_home.dart';
+import '../../modules/doctor_ui_new/profile_of_doctor.dart';
 import '../../shared/components/components.dart';
 import '../../shared/shared_prefrance.dart';
 import 'doctor_states.dart';
@@ -251,7 +251,61 @@ class CubitDoctorHosptial extends Cubit<DoctorStates> {
       },
     );
   }
-
+  // finish **************************************
+  void showFinishRequestSentDialo(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          content: SizedBox(
+            height: 250,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.check_circle,
+                  color: Colors.green,
+                  size: 50,
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  'Finish  Successfully',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainHomeDoctor(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 12),
+                  ),
+                  child: const Text(
+                    'Finish',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+  //************************************************
   // the time now
   String data() {
     DateTime now = DateTime.now();

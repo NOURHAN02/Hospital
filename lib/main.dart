@@ -4,8 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'class/bloc_observer.dart';
 import 'class/cubit/doctor_cubit.dart';
-import 'modules/doctor_ui/Sign_in_doctor.dart';
-import 'modules/doctor_ui/home/main_doctor_home.dart';
+import 'modules/doctor_ui_new/Sign_in_doctor.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();

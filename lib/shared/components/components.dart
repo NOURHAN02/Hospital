@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../modules/doctor_ui/booking_room.dart';
-import '../../modules/doctor_ui/open_page/open_history_medical_page.dart';
-import '../../modules/doctor_ui/Profile_patient.dart';
+
+import '../../modules/doctor_ui_new/Profile_patient.dart';
+import '../../modules/doctor_ui_new/booking_room.dart';
+import '../../modules/doctor_ui_new/open_page/open_history_medical_page.dart';
+
 
 //  list of patient in time slote
 Widget PatientUsertime(patient, context) => Column(
